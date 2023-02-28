@@ -1,19 +1,41 @@
- import React from 'react';
- import God from './Component/God'
- import Yash from './Component/Yash'
-import Mahesh from './Component/Mahesh';
- function App(){
-     return <div> 
-         <h1>App Component</h1>
-         <God/>
-         <hr/>
-         <Yash/>   
-         <hr/>
-         <Mahesh/>
-        
-         </div>
-         
- }    
- 
- export default App;
-  
+import React from 'react'
+import Navbar from './Navbar/Navbar'
+import { BrowserRouter as Router, Route, Routes} from 'react-router-dom'
+import Home from './Home/Home'
+import Product from './Product/Product'
+import Hike from './Employee/Hike'
+import CompA from './Components/CompA'
+import Message from './Message/Message-3'
+import Message2 from './Employee/Message2'
+import Employee from './Employee/Employee/Employee'
+import Login from './Login/Login'
+import ETApp from './ET/ETApp'
+import Digital from './Digital/Digital'
+import UserApp from './Users/UserApp'
+
+
+let App=()=>{
+        return (
+            <div>
+                <Router>
+                    <Navbar />
+                    <Routes>
+                        <Route path="/Home" element={<Home />} />
+                        <Route path="/ETAPP" element={<ETApp />} />
+                        <Route path="/Login" element={<Login />} />
+                        <Route path="/Digital" element={<Digital />} />
+                        <Route path="/Product" element={<Product />} />
+                        <Route path="/Employee" element={<Employee />} />
+                        <Route path="/Hike" element={<Hike />} />
+                        <Route path="/Message2" element={<Message2/>} />
+                        <Route path="/Message" element={<Message/>}/>
+                        <Route path="/CompA" element={<CompA/>}/>
+                        <Route path="/UserApp"  element={<UserApp/>}/>
+                        
+                     </Routes>
+                </Router>
+            </div>
+        )
+    }
+
+export default App
